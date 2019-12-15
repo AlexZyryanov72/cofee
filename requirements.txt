@@ -1,0 +1,3 @@
+import sqlite3, sys
+from PyQt5.Qt import QApplication, QMainWindow, QTableWidgetItem
+from main1 import Ui_MainWindow

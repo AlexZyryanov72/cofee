@@ -33,7 +33,6 @@ class Correct(QMainWindow, Ui_Dialog):
                   self.lineEdit_volume.text()]
             cur = con.cursor()
             result = cur.execute("SELECT * FROM cof").fetchall()
-
             if self.id == -1:
                 result_2 = cur.execute("INSERT INTO cof(" + ", ".join([col[0] for col in cur.description][1:])
                                        + ") VALUES(" + '"' + '", "'.join(sp) + '"' + ")")
@@ -59,7 +58,7 @@ class App(QMainWindow, Ui_MainWindow):
         self._correct = False
         self.setupUi(self)
         self.run()
-        self.pushButton_2.clicked.connect(self.add)
+        self.pushButton.clicked.connect(self.add)
         self.tableWidget.cellDoubleClicked.connect(self.redact)
 
     def get_stroka(self):
